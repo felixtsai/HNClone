@@ -1,11 +1,13 @@
 HnClone::Application.routes.draw do
-  get "sessions/new"
 
+  get "log_out" => "sessions#destroy", :as => "log_out"
   resources :users
 
   root to: 'links#home'
 
   resources :links
+
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
