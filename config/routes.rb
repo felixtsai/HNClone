@@ -3,8 +3,6 @@ HnClone::Application.routes.draw do
 
   root to: 'links#home'
 
-  match '/signup', to: 'users#new'
-
   resources :links
 
   # The priority is based upon order of creation:
