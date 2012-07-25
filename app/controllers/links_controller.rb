@@ -34,7 +34,7 @@ class LinksController < ApplicationController
 
   # GET /links/1/edit
   def edit
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
   end
 
   # POST /links
@@ -59,7 +59,7 @@ class LinksController < ApplicationController
   # PUT /links/1
   # PUT /links/1.json
   def update
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
 
     respond_to do |format|
       if @link.update_attributes(params[:link])
@@ -75,7 +75,7 @@ class LinksController < ApplicationController
   # DELETE /links/1
   # DELETE /links/1.json
   def destroy
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
     @link.destroy
 
     respond_to do |format|
