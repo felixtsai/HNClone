@@ -5,6 +5,9 @@
   <%= link_to "#{@link.url}", @link.url %>
 </p>
 
+<%= form_for(@comments), :url => {:controller => "comments", :action => "create"}
+  <%= f.text_field :
+
 
 <%= link_to 'Edit', edit_link_path(@link) %> |
 <%= link_to 'Back', links_path %>
