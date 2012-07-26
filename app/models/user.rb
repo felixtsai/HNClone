@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password, :id, :password_confirmation
+  attr_accessible :email, :password, :id, :password_confirmation, :user_id
   has_many :links
   has_many :comments, :through => :links
+  has_many :votes, :through => :links
 
 
   before_save { |user| user.email = email.downcase }
