@@ -1,5 +1,5 @@
 class Link < ActiveRecord::Base
-  attr_accessible :url, :created_at, :id
+  attr_accessible :url, :created_at, :user_id
 
   belongs_to :user
   has_many :comments, :through => :users
