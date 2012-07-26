@@ -10,7 +10,9 @@
 
 <% @links.each do |link| %>
   <tr>
+    <% if ??? == true %>
     <td><%= button_to "Vote", votes_path(:vote => {:link_id => link.id, :vote_status => true}) %></td>
+    <% end %>
     <td><%= link_to link.url, link.url %></td>
     <td><%= link_to 'Show', link %></td>
     <td><%= link_to 'Comment', comments_path %></td>
