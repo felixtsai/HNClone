@@ -1,0 +1,32 @@
+<%= form_for [@link, @comment] do |f| %>
+
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<table>
+  <tr>
+    <th>Comments</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @link.comments.each do |comment| %>
+  <tr>
+
+    <td><%= comment.body %></td>
+
+  </tr>
+<% end %>
+</table>
+
+
+
+
