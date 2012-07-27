@@ -2,7 +2,9 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+
+    @links = Link.order('vote_count DESC')
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +16,8 @@ class LinksController < ApplicationController
   # GET /links/1.json
   def show
     @link = Link.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.all
 
     respond_to do |format|
       format.html # show.html.erb

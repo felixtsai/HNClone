@@ -1,4 +1,4 @@
-<h1>Felix and Orasa's Hacker News</h1>
+<h> Faux Hacker News</h1>
 
 <table>
   <tr>
@@ -10,12 +10,13 @@
 
 <% @links.each do |link| %>
   <tr>
-    <% if !current_user.vote.link %>
+    <% if can_vote?(link) %>
     <td><%= button_to "Vote", votes_path(:vote => {:link_id => link.id, :vote_status => true}) %></td>
+    <% else %>
+    <td></td>
     <% end %>
     <td><%= link_to link.url, link.url %></td>
-    <td><%= link_to 'Show', link %></td>
-    <td><%= link_to 'Comment', comments_path %></td>
+    <td><%= link_to 'Comment', link %></td>
 
   </tr>
 <% end %>

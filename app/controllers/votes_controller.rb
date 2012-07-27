@@ -1,8 +1,9 @@
 class VotesController < ApplicationController
+
+
   def new
 
   @vote = Vote.new
-
 
   end
 
@@ -11,8 +12,9 @@ class VotesController < ApplicationController
 
   def create
     @vote = Vote.new(params[:vote])
-    @vote.user_id = current_user.id
+    @vote.user = current_user
     @vote.save
+
     redirect_to links_path
   end
 
