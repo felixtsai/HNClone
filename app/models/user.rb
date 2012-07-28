@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :password, :id, :password_confirmation
   has_many :links
-  has_many :comments, :through => :links
+  has_many :comments
   has_many :votes, :through => :links
 
 
